@@ -58,7 +58,16 @@ You may now begin your practice session.
 </div>
 
 <script>
-  // This will later send the timestamp to your spreadsheet
+
+fetch("https://script.google.com/macros/s/AKfycbyVeCpbgk7a5ZjPjgTkh0IQjJG111uQeKKBLCOhGp6clIStRqvPNuEELmVu5klKpj38/exec")
+  .then(response => response.text())
+  .then(data => {
+    console.log("Scan logged:", data);
+  })
+  .catch(error => {
+    console.log("Logging error:", error);
+  });
+
 </script>
 
 </body>
