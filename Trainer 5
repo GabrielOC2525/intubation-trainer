@@ -59,7 +59,10 @@ You may now begin your practice session.
 
 <script>
 
-fetch("https://script.google.com/macros/s/AKfycbyVeCpbgk7a5ZjPjgTkh0IQjJG111uQeKKBLCOhGp6clIStRqvPNuEELmVu5klKpj38/exec?trainer=Leg%20Trainer%205")
+const params = new URLSearchParams(window.location.search);
+const trainer = params.get("trainer") || "Unknown Trainer";
+
+fetch("https://script.google.com/macros/s/AKfycbyVeCpbgk7a5ZjPjgTkh0IQjJG111uQeKKBLCOhGp6clIStRqvPNuEELmVu5klKpj38/exec?trainer=" + encodeURIComponent(trainer))
   .then(response => response.text())
   .then(data => {
     console.log("Scan logged:", data);
