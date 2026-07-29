@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intubation Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f5f7fa;
+      color: #222;
+    }
+
+    .box {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #1b4d89;
+    }
+
+    .success {
+      font-size: 22px;
+      color: #198754;
+      margin: 25px 0;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Intubation Trainer</h1>
+
+<div class="success">
+✓ Scan recorded successfully
+</div>
+
+<p>
+Thank you for using the training model.
+</p>
+
+<p>
+You may now begin your practice session.
+</p>
+
+</div>
+
+<script>
+
+fetch("https://script.google.com/macros/s/AKfycbyVeCpbgk7a5ZjPjgTkh0IQjJG111uQeKKBLCOhGp6clIStRqvPNuEELmVu5klKpj38/exec?trainer=Leg%20Trainer%201")
+  .then(response => response.text())
+  .then(data => {
+    console.log("Scan logged:", data);
+  })
+  .catch(error => {
+    console.log("Logging error:", error);
+  });
+
+</script>
+
+</body>
+</html>
